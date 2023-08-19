@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique @db.VarChar(50)
+  name      String   @db.VarChar(50)
+  password  String   @db.VarChar(200)
+  phone     String   @unique @db.VarChar(26)
+  avatar    String?   @db.VarChar(150)
+  business  Business?
+  address   Address? 
+  refreshToken String? @db.LongText
+  activationToken String? @db.VarChar(200)
+  isActivated Boolean @default(false)
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
+  @@map("users")
+}
+
+model Address {
+  id       Int        @id @default(autoincrement())
+  user     User?       @relation(fields: [userId], references: [id])
+  userId   Int?        @unique
+  business Business?  @relation(fields: [businessId], references: [id])
+  businessId Int?     @unique
+  country   String    @db.VarChar(50)
+  province  String    @db.VarChar(100)
+  city      String    @db.VarChar(50)
+  street   String     @db.VarChar(150)
+  postalCode String?   @db.VarChar(10)
+  longitude Float?     @db.Float
+  latitude Float?      @db.Float
+  isDeleted Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@map("addresses")
+}
+
+model Business {
+  id        Int      @id @default(autoincrement())
+  user      User    @relation(fields: [userEmail], references: [email])
+  userEmail   String      @unique
+  product  Product[]
+  business_name      String   @db.VarChar(150)
+  business_phone     String?   @db.VarChar(26)
+  business_email     String?   @unique @db.VarChar(50)
+  business_description String? @db.VarChar(200)
+  business_logo      String?   @db.VarChar(150)
+  address   Address?
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
+  @@map("businesses")
+}
+
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  business  Business @relation(fields: [businessId], references: [id])
+  businessId Int
+  cost      ProductCost?
+  name      String   @db.VarChar(150) @unique
+  description String? @db.VarChar(200)
+  image     String?  @db.VarChar(150)
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
+  @@map("products")
+}
+
+model ProductCost {
+  id        Int      @id @default(autoincrement())
+  product   Product  @relation(fields: [productId], references: [id])
+  productId Int     @unique
+  cost_threshold Int @db.Int
+  materials Material[]
+  average_cost Float @db.Float
+  profit   Float    @db.Float
+  selling_price Float @db.Float
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+
+  @@map("product_costs")
+}
+
+model Material {
+  id            Int         @id @default(autoincrement())
+  productCost   ProductCost @relation(fields: [productCostId], references: [id])
+  productCostId Int
+  name          String      @db.VarChar(150)
+  unit_price    Float       @db.Float
+  cost          Float       @db.Float
+  quantity      Int         @db.Int
+  isDeleted     Boolean     @default(false)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  deletedAt     DateTime?
+
+  @@map("product_materials")
+}

@@ -1,0 +1,176 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Qwoffer",
+    "dateExported": "2023-08-19T11:46:56.171Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0c075bd4-8588-4e21-87e7-a96a65ba64b7",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Register API",
+            "url": "http://localhost:5000/api/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-02T16:45:41.376Z",
+            "modified": "2023-08-17T03:55:58.697Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"uus kicimpring\",\n  \"email\" : \"onix1453@gmail.com\",\n  \"phone\" : \"085722338103\",\n  \"password\" : \"password\",\n  \"confirmPassword\" : \"password\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "82e220c3-fe75-4907-962c-d49011e6a909",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Add User Address API",
+            "url": "http://localhost:5000/api/users/address",
+            "method": "POST",
+            "sortNum": 12500,
+            "created": "2023-08-17T13:11:43.156Z",
+            "modified": "2023-08-17T16:01:42.582Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJvbml4MTQ1M0BnbWFpbC5jb20iLCJuYW1lIjoidXVzIGtpY2ltcHJpbmciLCJpYXQiOjE2OTIyODQxNjEsImV4cCI6MTY5MjI4NDE3MX0.e2l9FABgNUsACxCxt-uLNnqkOrCBoJwAxHafqYRP20g"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\" : 1,\n  \"country\" : \"Indonesia\",\n  \"province\" : \"West Java\",\n  \"city\" : \"Bekasi Barat\",\n  \"street\" : \"Gang Pelopor 50\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "12c843ac-5ca8-4ae1-b287-b4cfe08894e3",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Add User Business API",
+            "url": "http://localhost:5000/api/users/business",
+            "method": "POST",
+            "sortNum": 13750,
+            "created": "2023-08-17T13:58:20.510Z",
+            "modified": "2023-08-17T15:47:04.873Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJvbml4MTQ1M0BnbWFpbC5jb20iLCJuYW1lIjoidXVzIGtpY2ltcHJpbmciLCJpYXQiOjE2OTIyODA5MjIsImV4cCI6MTY5MjI4MDkzMn0.WWb-8pRbkK7QiI909b8jE7m7EeXkvPVzZwyZ9ZcrY68"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\" : 1,\n  \"business_name\" : \"Juragan Emas\",\n  \"business_description\" : \"Jagonya bikin emas perhiasan\",\n  \"business_phone\" : \"085722338109\",\n  \"use_user_address\" : true\n \n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dc831a91-b165-433c-bfe1-2e42a9f78b1b",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Update User Business API Copy",
+            "url": "http://localhost:5000/api/users/business",
+            "method": "PUT",
+            "sortNum": 14375,
+            "created": "2023-08-17T15:22:36.776Z",
+            "modified": "2023-08-17T16:00:26.733Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJvbml4MTQ1M0BnbWFpbC5jb20iLCJuYW1lIjoidXVzIGtpY2ltcHJpbmciLCJpYXQiOjE2OTIyODA5MjIsImV4cCI6MTY5MjI4MDkzMn0.WWb-8pRbkK7QiI909b8jE7m7EeXkvPVzZwyZ9ZcrY68"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\" : 1,\n  \"business_name\" : \"Juragan Emas Kaya Raya\",\n  \"business_description\" : \"Jagonya bikin emas perhiasan di Indonesia\",\n  \"business_phone\" : \"085722338109\",\n  \"use_user_address\" : true\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "628fa271-efbc-45af-a207-b315df2a5946",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Login Api",
+            "url": "http://localhost:5000/api/users/login",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-08-17T09:57:49.872Z",
+            "modified": "2023-08-17T09:58:15.444Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\n  \"email\" : \"onix1453@gmail.com\",\n  \"password\" : \"password\"\n\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2ef62183-bfec-4898-b51b-f4b71a34d5f1",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Resend Email Activation",
+            "url": "http://localhost:5000/api/users/resendActivationEmail",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-08-17T06:44:20.262Z",
+            "modified": "2023-08-17T08:02:00.304Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\n  \"email\" : \"onix1453@gmail.com\"\n\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4c9010a5-7e5b-4e88-8086-9e8c3a193799",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Get User Info",
+            "url": "http://localhost:5000/api/users",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-08-17T10:13:45.209Z",
+            "modified": "2023-08-17T13:12:54.142Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJvbml4MTQ1M0BnbWFpbC5jb20iLCJuYW1lIjoidXVzIGtpY2ltcHJpbmciLCJpYXQiOjE2OTIyNzc5NjEsImV4cCI6MTY5MjI3Nzk3MX0.egJ6bg2Te_WMoKyX9quKI5gDFwnJuR5NPXb-oNUKyi0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a81cc718-a8a1-4d59-bb1a-7da4dd7f11bf",
+            "colId": "5297b73f-33d8-43d8-a151-21018b2d2aa3",
+            "containerId": "",
+            "name": "Account activation",
+            "url": "http://localhost:5000/api/users/activation/bf218907-fcc5-42f0-8e99-87e125e33812",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-08-17T07:56:54.742Z",
+            "modified": "2023-08-17T07:57:39.487Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\n  \"email\" : \"onix_1453gmail.com\"\n\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "qwoffer_backend",
+  "version": "1.0.0",
+  "description": "This is QWOFFER backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Hasbi Assidiki",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.1.1",
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "nodemailer": "^6.9.4",
+    "uuid": "^9.0.0",
+    "winston": "^3.10.0",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.17",
+    "@types/uuid": "^9.0.2",
+    "eslint": "^8.47.0",
+    "nodemon": "^3.0.1",
+    "prisma": "^5.1.1"
+  },
+  "type": "module"
+}
